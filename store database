@@ -1,0 +1,28 @@
+CREATE TABLE languagestore (id INTEGER PRIMARY KEY, language TEXT, title TEXT, volume INTEGER, level TEXT, format TEXT, isbn INTEGER, price NUMERIC);
+INSERT INTO languagestore VALUES (1, "Japanese", "Nakama", 1,"Beginner", "book", 2345678, 165);
+INSERT INTO languagestore VALUES (2, "Japanese", "Nakama", 2, "Intermediate", "book", 3456789, 185);
+INSERT INTO languagestore VALUES (3, "Japanese", "Genki", 1, "Beginner", "book", 4567890, 56);
+INSERT INTO languagestore VALUES (4, "Japanese", "Genki", 2, "Intermediate", "book", 5678901, 60);
+INSERT INTO languagestore VALUES (5, "Japanese", "Tobira", 0, "Advance", "book", 6789012, 78);
+INSERT INTO languagestore VALUES (6, "Japanese", "Rosetta Stone", 5, "Advance", "online subscription", 0000000, 200);
+INSERT INTO languagestore VAlUES (7, "Japanese", "Pimsleur", 5, "Advance", "CD and online subscription", 0000000, 350);
+INSERT INTO languagestore VALUES (8, "Mandarin", "Pimsleur", 5, "Advance", "CD", 0000000, 350);
+INSERT INTO languagestore VALUES (9, "Mandarin", "Everyday Mandarin", 1, "Beginner", "book", 7890123, 75);
+INSERT INTO languagestore VALUES (10, "Mandarin", "Everyday Mandarin", 2, "Intermediate", "book", 8901234, 100);
+INSERT INTO languagestore VALUES (11, "Arabic", "Arabic in Use", 1, "Beginner", "book", 9012345, 90);
+INSERT INTO languagestore VAlUES (12, "Arabic", "Arabic in Use", 2, "Intermediate", "book", 0123456, 100);
+INSERT INTO languagestore VAlUES (13, "Arabic", "Advancing in Arabic", 1, "Advance", "book", 1234567, 120);
+INSERT INTO languagestore VAlUES (14, "Korean", "Studies in Korean", 1, "Beginner", "book", 2345678, 140);
+INSERT INTO languagestore VAlUES (15, "Korean", "More Studies in Korean", 2, "Intermediate", "book", 3456789, 150);
+SELECT * FROM languagestore;
+
+SELECT * FROM languagestore WHERE volume >= 2  ORDER BY isbn;
+
+SELECT * FROM languagestore ORDER BY price;
+
+SELECT * FROM languagestore; 
+
+SELECT MAX(price) as most_expensive FROM languagestore;
+
+SELECT AVG(price) as average_price FROM languagestore;
+
