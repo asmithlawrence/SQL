@@ -1,0 +1,20 @@
+SELECT item_name, price FROM superstore ORDER BY price;
+SELECT AVG(average_rating) average_rating, item_name, category FROM superstore
+GROUP BY item_name
+ORDER BY average_rating;
+
+SELECT MAX(price) price, item_name FROM superstore WHERE category = "Kitchen Supplies";
+
+SELECT MIN(price) price, item_name FROM superstore WHERE category = "Kitchen Supplies";
+
+SELECT SUM(stock_quantity) stock_quantity, item_name, price FROM superstore
+GROUP BY item_name
+ORDER BY stock_quantity;
+
+SELECT MIN(average_rating) average_rating, item_name, price FROM superstore;
+
+SELECT MAX(average_rating) average_rating, item_name, price FROM superstore;
+
+SELECT MAX(average_rating) average_rating, item_name, price 
+FROM superstore
+WHERE category = "Furnishings";
