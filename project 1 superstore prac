@@ -1,0 +1,26 @@
+SELECT * FROM superstore;
+SELECT item_name, price, category FROM superstore 
+GROUP BY category
+ORDER BY price;
+
+SELECT AVG(average_rating) average_rating, item_name, category
+FROM superstore
+GROUP BY item_name
+ORDER BY average_rating;
+
+SELECT AVG(price) AS "averag cost of kitchen supplies"
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+SELECT SUM(stock_quantity) stock_quantity, item_name
+FROM superstore
+WHERE item_name = "Smart LED TV";
+
+SELECT item_name, SUM(stock_quantity) item_available
+FROM superstore
+GROUP BY item_name;
+
+SELECT SUM(stock_quantity) stock_quantity, item_name, price
+FROM superstore
+GROUP BY item_name
+ORDER BY stock_quantity;
