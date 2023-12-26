@@ -1,0 +1,57 @@
+SELECT * FROM superstore
+ORDER BY price;
+
+SELECT item_name, category, price
+FROM superstore
+ORDER BY price;
+
+SELECT * FROM superstore
+ORDER BY stock_quantity;
+
+SELECT * FROM superstore
+ORDER BY average_rating;
+
+SELECT * FROM superstore
+ORDER BY average_rating desc;
+
+SELECT SUM(price * stock_quantity) AS inventory_value
+FROM superstore;
+
+SELECT SUM(stock_quantity) AS items_in_inventory
+FROM superstore;
+
+SELECT AVG(average_rating) average_rating, item_name, category
+FROM superstore
+GROUP BY item_name
+ORDER BY average_rating;
+
+SELECT SUM(stock_quantity) stock_quantity, item_name, category
+FROM superstore
+GROUP BY item_name
+ORDER BY stock_quantity desc;
+
+SELECT AVG(price) AS "average cost of kitchen supplies"
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+SELECT MAX(price) AS "max kitchen supply price", item_name
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+SELECT MIN(price) AS "min kitchen supply price", item_name
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+SELECT SUM(stock_quantity), item_name
+FROM superstore
+WHERE category = "Kitchen Supplies"
+GROUP BY item_name;
+
+SELECT SUM(stock_quantity) stock_quantity, item_name
+FROM superstore
+WHERE item_name = "Slow Cooker";
+
+SELECT SUM(stock_quantity) item_name, stock_quantity, category
+FROM superstore
+WHERE category = "Furnishings"
+GROUP BY item_name;
