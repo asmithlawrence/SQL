@@ -1,0 +1,33 @@
+SELECT * FROM bank_products;
+
+SELECT * FROM bank_products
+WHERE product_type = "Savings"
+OR product_type = "Checking";
+
+SELECT * FROM bank_products
+WHERE product_type = "Savings"
+AND interest_rate >= .075
+AND monthly_fee = 0;
+
+SELECT product_name, interest_rate
+FROM bank_products
+WHERE product_type = "Savings"
+AND interest_rate >= 0.75
+AND monthly_fee =0;
+
+SELECT product_name, interest_rate, monthly_fee
+FROM bank_products
+WHERE product_type = "Savings"
+AND interest_rate >= 0.75
+AND monthly_fee = 0;
+
+SELECT product_name, interest_rate, monthly_fee AS "no monthly fee"
+FROM bank_products
+WHERE product_type = "Savings"
+AND interest_rate >= 0.75
+AND monthly_fee = 0;
+
+SELECT Product_name, product_type, monthly_fee AS "no monthly fee", minimum_balance AS "low minimum balance"
+FROM bank_products
+WHERE monthly_fee = 0
+AND minimum_balance = 10;
