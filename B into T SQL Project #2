@@ -1,0 +1,33 @@
+SELECT company_name, SUM(maternity_leave_weeks) AS maternity_leave_offered
+FROM fortune_companies
+GROUP BY company_name
+HAVING maternity_leave_offered >=12;
+
+SELECT company_name, 
+CASE WHEN paid_time_off_days >= 20 THEN "Outstading work/life balance"
+WHEN paid_time_off_days >= 15 THEN "Good work/life balance"
+WHEN paid_time_off_days>= 10 THEN "Lackluster work/life balance"
+WHEN paid_time_off_days >= 5 THEN "Inadequate work/life balance"
+ELSE "NO work/life balance" END AS "Work_Life_Balance"
+FROM Fortune_companies
+GROUP BY company_name;
+
+SELECT company_name, industry,
+ROUND(MIN(revenue),1) AS Min_revenue
+FROM fortune_companies;
+
+SELECT company_name, industry,
+ROUND (MAX(revenue)) AS Max_Revenue_Billions
+FROM fortune_companies;
+
+SELECT company_name, industry
+FROM fortune_companies
+WHERE healthcare_benefits =1
+AND maternity_leave_weeks >=10;
+
+company with over million employess that offers health benefits and 4 weeks paid vacation.
+SELECT company_name, industry
+FROM fortune_companies
+WHERE healthcare_benefits = 1
+AND paid_time_off_days >= 20
+AND employees > 1000000;
