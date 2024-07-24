@@ -1,0 +1,41 @@
+SELECT company_name, healthcare_benefits, paid_time_off_days, maternity_leave_weeks FROM fortune_companies
+WHERE healthcare_benefits = 1
+AND paid_time_off_days >=15
+AND maternity_leave_weeks >=8
+GROUP BY paid_time_off_days;
+
+SELECT * FROM fortune_companies;
+
+SELECT company_name, industry, revenue 
+FROM fortune_companies
+GROUP BY industry
+HAVING revenue > 250;
+
+SELECT company_name, revenue FROM fortune_companies
+WHERE revenue > 300;
+
+SELECT * FROM fortune_companies;
+
+SELECT company_name, employees,
+CASE WHEN employees >= 2000000 THEN "Tier 1"
+WHEN employees >= 1000000 THEN "Tier 2"
+WHEN employees >=500000 THEN "Tier 3"
+WHEN employees >= 100000 THEN "Tier 4"
+WHEN employees >= 50000 THEN "Tier 5"
+WHEN employees >= 10000 THEN "Tier 6"
+ELSE "Tier Not Assigned"
+END AS Company_Size
+FROM fortune_companies
+ORDER BY employees DESC;
+
+SELECT MAX(paid_time_off_days), company_name FROM fortune_companies;
+
+SELECT MIN(paid_time_off_days), company_name FROM fortune_companies;
+
+SELECT MAX(paid_time_off_days), company_name FROM fortune_companies
+WHERE employees >= 1000000 
+AND industry = "Retail";
+
+SELECT MIN(paid_time_off_days), company_name, revenue FROM fortune_companies
+WHERE employees >500000
+HAVING revenue >=250;
